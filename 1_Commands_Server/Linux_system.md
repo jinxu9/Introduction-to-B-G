@@ -8,7 +8,8 @@
     
       http://cheatsheetworld.com/programming/unix-linux-cheat-sheet/
       https://www.cheatography.com/davechild/cheat-sheets/linux-command-line/
-      
+	https://www.linuxtrainingacademy.com/linux-commands-cheat-sheet/
+     
 3. powerful 工具：
      a. vim
      b. awk
