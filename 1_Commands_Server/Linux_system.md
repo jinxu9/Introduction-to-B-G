@@ -12,10 +12,20 @@
      
 3. powerful 工具：
      a. vim
+     	
+		https://www.runoob.com/linux/linux-vim.html
+		
      b. awk
+     
+     		https://www.runoob.com/linux/linux-comm-awk.html
+		
      c. grep
+     
+     		https://www.runoob.com/linux/linux-comm-grep.html
+		
      d. find 
 
+		https://www.runoob.com/linux/linux-comm-find.html
 
     
     
