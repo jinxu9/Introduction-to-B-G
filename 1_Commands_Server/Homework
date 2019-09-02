@@ -1,0 +1,8 @@
+1. Use shell script to print log with the following information
+  1. Load your tools with module
+  2. Get the version information for your module
+  3. Print out the system time 
+  4. Print out the name of the tool and the version of the tools. 
+  
+2. Submit the script using PBS
+3.upload your script and results to github.
