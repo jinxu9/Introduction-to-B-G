@@ -1,0 +1,14 @@
+Resource of server:
+32 G memory
+96 processor
+I/O speed 100M/s
+
+Suppose:
+Each job need 10G memory for the first part(4h with one processor)
+3G memory for the second part(10h with one processor). 
+3G data will writ to disk in the end (part 3 ) 
+
+How t design your pipeline and manage your job. 
+How long it will take for your pipeline to finishe 10 Jobs. 
+
+
