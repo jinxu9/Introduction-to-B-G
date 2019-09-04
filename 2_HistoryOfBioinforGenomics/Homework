@@ -1,0 +1,7 @@
+1. Dowload one genome(fasta files ) from UCSC for the species you like. 
+
+2. Tell us the size and the number of chromosomes of the genome. 
+
+
+TIPS: Using FTP or Wget to download the genome directly to the server.
+Don't download to your local computer and upload to the server. 
