@@ -1,0 +1,17 @@
+1. Reproducible (Record all the details) 
+        1. Commands
+        2. Versions of tools 
+        3. Input files / format 
+2. Searchable 
+    1. Structure
+    2. Naming 
+3. Reliable 
+    1. Positive /negative controls 
+    2. Quantifications
+    3. Expectations 
+4. Efficient 
+    1. Multiple task management 
+    2. Using small test data for development step
+    5.Reusable
+            1. Database and software separated from data and project
+            2. Saved script and command lines are easy to use for pipeline 
