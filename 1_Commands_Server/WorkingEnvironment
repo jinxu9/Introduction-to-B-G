@@ -1,0 +1,12 @@
+WorkingEnvironment
+
+1. 推荐使用 Mac/ Ubuntu 系统：
+    1. 兼容性好
+    2. 设置简单
+    3. 文件格式编码不容易出现问题。
+2. Window系统解决方案
+    1. 装入双系统
+       https://blog.csdn.net/flyyufenfei/article/details/79187656
+    2. Windows下使用虚拟机
+       https://blog.csdn.net/chenweijiSun/article/details/70285015
+    3. 配置Windows下 ssh \ FTP \ R 等 与 Server 交互的软件
