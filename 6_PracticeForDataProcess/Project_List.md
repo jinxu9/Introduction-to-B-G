@@ -7,4 +7,5 @@
 5. WEX-seq
 6. HiC-seq
 7. HiChIP-seq
+8. APEX-seq
 8. 任选
