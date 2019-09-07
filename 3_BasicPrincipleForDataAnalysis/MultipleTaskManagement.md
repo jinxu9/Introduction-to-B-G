@@ -5,3 +5,5 @@
     Manage  resource of the server 
 3. Program level 
     Manage processors 
+
+https://www.cnblogs.com/qianqiannian/p/7010909.html
