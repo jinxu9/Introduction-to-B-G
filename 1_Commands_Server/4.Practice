@@ -3,15 +3,6 @@
 2. Build your own folder for tools 
 3. Install one package in your own folder
 4. Setup modulefiles 
-5. Use shell script to print log with the following information
-  1. Load your tools with module
-  2. Get the version information for your module
-  3. Print out the system time 
-  4. Print out the name of the tool and the version of the tools. 
-  
-6. Submit the script using PBS 
-
-
 
 Example for PBS and module command
 ```
