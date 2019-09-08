@@ -12,3 +12,28 @@
 6. Submit the script using PBS 
 
 
+
+Example for PBS and module command
+```
+## PBS configure 
+#PBS -N Rai1-KO
+#PBS -j oe
+#PBS -q batch
+#PBS -S /bin/sh
+#PBS -l nodes=1:ppn=4
+#PBS -l mem=3000m
+
+# This is necessary to find  the module commands
+source /etc/profile.d/modules.sh
+# load tools by module 
+module load  tophat2/2.0.12 
+
+gtf="/public/home/jinxu/Data_BK/Rai1/Rai1-KO/RNA-seq/Annotation/genes.gtf"
+ref="/public/home/jinxu/DB/DB/mmu9/mm9_UCSC_genome/mm9_chr" 
+
+tophat2  -o /public/home/jinxu/Projects/Rai1_KO/output/Bdnf-1 -p 24 -G $gtf -I 1000000 --max-coverage-intron 1000000 --max-segment-int
+ron 1000000  --no-coverage-search --b2-very-sensitive   --microexon-search $ref  /public/home/jinxu/Projects/Rai1_KO/raw/Bdnf-1_1.fq.g
+z /public/home/jinxu/Projects/Rai1_KO/raw/Bdnf-1_2.fq.gz  1> /public/home/jinxu/Projects/Rai1_KO/output/Bdnf-1/tophat.log 2>/public/ho
+me/jinxu/Projects/Rai1_KO/output/Bdnf-1/tophat.err 
+```
+qsub cmd.sh 
