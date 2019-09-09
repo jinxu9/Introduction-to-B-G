@@ -1,0 +1,9 @@
+在用户权限下安装程序， 配置 module 文件和路径： 
+1. 下载需要的程序
+    1. sratools 
+    2. bedtools 
+    3. MACS
+   
+2. 安装
+3. 配置 modulefile
+3. 检测安装是否成功 
