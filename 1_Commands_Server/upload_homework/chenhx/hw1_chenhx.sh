@@ -11,6 +11,6 @@ source /etc/profile.d/modules.sh
 # load tools by module 
 module load bowtie2
 
-date > /public/home/chenhx98/project/Introduction-to-B-G/1_Commands_Server/upload_homework/chenhx98/log
-bowtie2 --version >> /public/home/chenhx98/project/Introduction-to-B-G/1_Commands_Server/upload_homework/chenhx98/log
+date > /public/home/chenhx98/project/Introduction-to-B-G/1_Commands_Server/upload_homework/chenhx/log_chenhx
+bowtie2 --version >> /public/home/chenhx98/project/Introduction-to-B-G/1_Commands_Server/upload_homework/chenhx/log_chenhx
 
