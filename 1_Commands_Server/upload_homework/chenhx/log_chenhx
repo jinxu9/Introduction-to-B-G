@@ -1,0 +1,8 @@
+Mon Sep  9 15:58:06 CST 2019
+/public/software/bowtie2-2.1.0/bowtie2-align version 2.1.0
+64-bit
+Built on do-dmxp-mac.win.ad.jhu.edu
+Tue Feb 26 13:34:02 EST 2013
+Compiler: gcc version 4.1.2 20080704 (Red Hat 4.1.2-54)
+Options: -O3 -m64 -msse2 -funroll-loops -g3 
+Sizeof {int, long, long long, void*, size_t, off_t}: {4, 8, 8, 8, 8, 8}
