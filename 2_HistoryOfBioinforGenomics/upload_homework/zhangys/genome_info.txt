@@ -1,0 +1,5 @@
+Name: Drosophila melanogaster
+Version: BDGP Release 6 + ISO1 MT/dm6
+Finish: Aug. 2014
+Genome Size: 143726002
+Chromosome number: 6 
