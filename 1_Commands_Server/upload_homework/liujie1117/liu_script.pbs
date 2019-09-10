@@ -1,0 +1,18 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=00:10:00
+#PBS -q batch
+#PBS -N liu_script.pbs
+#PBS -o test.stdout
+#PBS -e test.stderr
+
+# load my tool with module
+module load git/1.8.3.1
+
+# get the version information for my module
+module list
+
+# print out the system time
+date '+%c'
+# print out the name of the tool and the version of the tools
+git --version

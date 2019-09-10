@@ -1,0 +1,22 @@
+## PBS configure
+#PBS -N hahw_1
+#PBS -j oe
+#PBS -q batch
+#PBS -S /bin/sh
+#PBS -l nodes=1:ppn=4
+#PBS -l mem=3000m
+
+#this is necessary to find the module commands
+source /etc/profile.d/modules.sh
+
+#load your tool with module
+module load python
+
+#get the version information of your tool
+python --version >> /public/home/huangao3/huangao-hw/hw_1output
+
+#print out the system date
+date >> /public/home/huangao3/huangao-hw/hw_1output
+
+#print out the name of the tool and the version of the tools
+module list >>/public/home/huangao3/huangao-hw/hw_1output

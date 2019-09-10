@@ -1,0 +1,5 @@
+Name: Dog genome
+Version: Broad CanFam3.1/canFam3
+Finish: Sep. 2011
+Genome Size:	2459241924
+Chromosome number:	40
