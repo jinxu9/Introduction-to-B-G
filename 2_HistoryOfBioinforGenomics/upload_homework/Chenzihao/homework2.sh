@@ -18,7 +18,7 @@ source /etc/profile.d/modules.sh
 size=`tail -1 /public/home/Chenzh275/Data/balAcu1/GCF_000493695.1_BalAcu1.0_genomic.fna.fai|cut -f 3`
 printf " Genome Size:	$size\n"  
 
-#I can't find the chromosome number from fna-format file, maybe i'll update this,when the fa-format file is been downloaded.
+#I can't find the chromosome number from fna-format file, maybe i'll update this after the fa-format file downloaded.
 #ChrmNum=
 #printf " Chromosome number:	"$ChrmNum
 
