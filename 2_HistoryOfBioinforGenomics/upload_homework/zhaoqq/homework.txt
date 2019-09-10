@@ -1,0 +1,6 @@
+Name:human genome
+Version:GRCh37/hg19
+Finish:Feb. 2009
+Genome Size:3199901561
+Chromosome number:54
+
