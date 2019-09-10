@@ -1,0 +1,15 @@
+## PBS configure 
+#PBS -N homework2
+#PBS -j oe
+#PBS -q batch
+#PBS -S /bin/sh
+#PBS -l nodes=1:ppn=4
+#PBS -l mem=3000m
+
+# This is necessary to find  the module commands
+
+source /etc/profile.d/modules.sh
+
+# load tools by module 
+wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/181/335/GCF_000181335.3_Felis_catus_9.0/GCF_000181335.3_Felis_catus_9.0_genomic.fna.gz -O /public/home/yangjw28/data/Felis_catus_9.0_genomic.fna.gz
+

@@ -1,0 +1,19 @@
+gzip -d Felis_catus_9.0_genomic.fna.gz
+
+module load samtools
+samtools faidx Felis_catus_9.0_genomic.fna
+
+tail -1  Felis_catus_9.0_genomic.fna.fai  |cut -f 3
+grep -v 'chrUn' Felis_catus_9.0_genomic.fna.fai |wc -l
+
+
+ echo "Genome Size:$size"
+Genome Size:2554055081
+
+echo "Chromosome number:$chr_num"
+4508
+#估计是基因组下载的版本有问题(.fai文件第一列并不是染色体的名字)
+
+Assembly date: Nov. 2017
+
+version：Felis_catus_9.0/felCat9
