@@ -1,13 +1,16 @@
-在用户权限下安装程序， 配置 module 文件和路径： 
+
+(一)在用户权限下安装程序， 配置 module 文件和路径： 
 1. 下载需要的程序
     1. sratools 
     2. bedtools 
     3. MACS
     4. fastqc
     5. STAR
-    6. bwa 
-    
+    6. bwa
+    7. cutadapt
    
 2. 安装
 3. 配置 modulefile
 3. 检测安装是否成功 
+
+(二）Cleaning ...
