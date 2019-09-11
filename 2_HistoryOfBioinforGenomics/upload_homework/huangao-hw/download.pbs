@@ -1,0 +1,10 @@
+## PBS configure
+#PBS -N hahw_2
+#PBS -S /bin/sh
+
+#this is necessary to find the module commands
+source /etc/profile.d/modules.sh
+
+#download genome of D. melanogaster
+wget -P /public/home/huangao3/huangao-hw2 'ftp://hgdownload.cse.ucsc.edu/goldenPath/dm6/bigZips/dm6.2bit'
+

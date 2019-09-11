@@ -1,0 +1,5 @@
+genome name: Human genomes
+Version:GRCh38.p12/hg38
+Finish: Dec. 2013 initial release; Dec. 2017 patch release 12
+genome size:	3273434969
+Chromosome number:	455

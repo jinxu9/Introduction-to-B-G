@@ -1,0 +1,17 @@
+
+##transform .2bit to .fa
+twoBitToFa dm6.2bit dm6.fa
+
+##load samtools
+module load samtools
+samtools faidx dm6.fa
+
+##extract information
+
+size=`tail -1 dm6.fa.fai |cut -f 3`
+echo "Genome Size: $size"
+
+grep -v "v1" dm6.fa.fai >> dm6-2.fa.fai
+chrm=`grep -v "v2" dm6-2.fa.fai |wc -l`
+echo "Chromosome number: $chrm"
+

@@ -1,0 +1,7 @@
+hg38 info
+
+Name:	Human
+Version:	GRCh38/hg38	
+Finish time:	Dec.2013
+Size:	3273443165 
+Num of chromosomes:	25

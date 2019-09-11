@@ -4,6 +4,7 @@
 注意，需提供建库过程中具体仪器设备，试剂盒，试剂耗材等详细信息。
 假设自己将亲自做试验： 
 
+<<<<<<< HEAD
 1. microRNA-seq 
 2. RNAseq
 3. ChIP-seq   xijf
@@ -13,3 +14,14 @@
 7. APEX-seq
 8. 任选
 9. 任选
+=======
+1. microRNA-seq yjw
+2. RNAseq luoyh
+3. ChIP-seq chenzihao
+4. ATAC-seq zhaoqq
+5. whole genome exome -seq  xijf
+6. HiC-seq  <- Jie Liu
+7. APEX-seq Huang Ao
+8. 任选 miCLIP-seq chenhx
+9. 任选 irCLIP-seq zhangys
+>>>>>>> 30082ad7bece978635ab66ed6d63addb547cf88c

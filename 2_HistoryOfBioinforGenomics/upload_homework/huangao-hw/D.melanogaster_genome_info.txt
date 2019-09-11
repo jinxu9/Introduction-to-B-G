@@ -1,0 +1,7 @@
+D.melanogaster genome information
+
+Name: Drosophila Melanogaster
+Version:BDGP Release 6 + ISO1 MT/dm6
+Finish time: Aug. 2014
+Genome Size:146570833
+Chromosome number:8
