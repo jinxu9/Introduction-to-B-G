@@ -1,0 +1,8 @@
+#PBS -N Luo_download
+#PBS -j oe
+#PBS -q batch
+#PBS -l nodes=1:ppn=1
+
+wget -O /public/home/luoyh28/database/C_elegans.2bit  http://hgdownload.soe.ucsc.edu/goldenPath/ce11/bigZips/ce11.2bit 
+ 
+

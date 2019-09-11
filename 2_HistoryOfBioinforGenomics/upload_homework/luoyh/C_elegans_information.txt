@@ -1,0 +1,5 @@
+name:	C.elegans genome
+version:	WBcel234/cell
+finish time:	Feb.2013
+size:	100286401
+Number of chromosomes:	7
