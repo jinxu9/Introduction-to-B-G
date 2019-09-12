@@ -1,0 +1,5 @@
+Name of genome: sacCer3
+Version of genome: sacCer3
+Finish time: Apr 2011
+Genome size:  12157105
+Number of chromosomes:  17
