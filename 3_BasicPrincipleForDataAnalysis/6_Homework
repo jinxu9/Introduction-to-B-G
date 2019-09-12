@@ -8,6 +8,9 @@ Each job need 10G memory for the first part(4h with one processor)
 3G memory for the second part(10h with one processor). 
 3G data will writ to disk in the end (part 3 ) 
 
+#Data needs to be read from disk to memory before each part and written to disk after each part.
+#Each part can only be processed by one processor, and only one part can be processed by one processor at a time.
+
 How to design your pipeline and manage your job. 
 How long it will take for your pipeline to finishe 10 Jobs. 
 
