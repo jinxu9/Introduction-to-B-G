@@ -1,0 +1,1 @@
+**Part of  the results and R codes are showed in the ‘RNAseq.pdf’, the detailed report will be uploaded in the following days soon after I get it done**
