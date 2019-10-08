@@ -1,0 +1,34 @@
+## PBS configure 
+#PBS -N call_peak
+#PBS -j oe
+#PBS -q batch
+#PBS -S /bin/sh
+#PBS -l nodes=1:ppn=8
+#PBS -l mem=10000m
+
+# This is necessary to find  the module commands
+ source /etc/profile.d/modules.sh
+ source /public/home/xijf/.bashrc
+# load tools by module 
+module load bedtools/2.15.1
+
+#sort for the best 1000 m6A peak_summit regions
+sort -k8,8 -n -r /public/home/xijf/project/MeRIP_seq/peak_calling/results/m6A_sig_peaks.xls |head -1000 |awk '{summit=$2-1+$5; print $1 "\t" summit-51 "\t" summit+50}' >/public/home/xijf/project/MeRIP_seq/motif_search/results/bestPeaks.locaion
+
+#defein the file location
+gtf="/public/home/xijf/project/reference/hg/hg19/hg19.gtf"
+bestpeaks_location="/public/home/xijf/project/MeRIP_seq/motif_search/results/bestPeaks.locaion"
+bestpeaks_bed="/public/home/xijf/project/MeRIP_seq/motif_search/results/bestpeaks.bed"
+ref="/public/home/xijf/project/reference/hg/hg19/hg19.fa"
+bestpeaks_fa="/public/home/xijf/project/MeRIP_seq/motif_search/results/bestPeaks.fa"
+bestpeaks_meme="/public/home/xijf/project/MeRIP_seq/motif_search/results/bestpeaks_meme"
+#Map the peak_summit regions to annotated genes in order to fetch sequences from the sense strand
+intersectBed -wo -a $bestpeaks_location -b $gtf |awk -v OFS="\t" '{print $1,$2,$3,"*","*",$10}'|uniq > $bestpeaks_bed
+
+#get fasta file of bestpeaks from bestpeaks.bed, using fastaFromBed
+fastaFromBed -s -fi $ref -bed $bestpeaks_bed -fo $bestpeaks_fa
+
+#ded novo motif finding
+meme $bestpeaks_fa -dna -nmotifs 3 -maxsize 1000000 -o $bestpeaks_meme
+
+

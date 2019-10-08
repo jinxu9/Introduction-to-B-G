@@ -1,0 +1,51 @@
+## PBS configure 
+#PBS -N summit_motif_test_6
+#PBS -j oe
+#PBS -q batch
+#PBS -S /bin/sh
+#PBS -l nodes=1:ppn=4
+#PBS -l mem=3000m
+
+# This is necessary to find  the module commands
+ source /etc/profile.d/modules.sh
+ source /public/home/xijf/.bashrc
+#Thisi is necessary to load module
+module load bedtools/2.15.1
+module load meme/5.0.5
+
+#Generate a location file containing sequences flanking the peak summits(+-150 nt)
+m6A_sig_peaks="/public/home/xijf/project/MeRIP_seq/peak_calling/results/m6A_sig_peaks.xls"
+m6A_neg_peaks="/public/home/xijf/project/MeRIP_seq/peak_calling/results/m6A_negative_peaks.xls"
+
+m6A_sig_peaks_summit_location="/public/home/xijf/project/MeRIP_seq/summitToMotif/results/m6A_sig_peaks_summit.location"
+m6A_neg_peaks_summit_location="/public/home/xijf/project/MeRIP_seq/summitToMotif/results/m6A_neg_peaks_summit.location"
+
+awk '{if($1~/[^#]/) {summit=$2-1+$5; print $1 "\t" summit-151 "\t" summit+150} }' $m6A_sig_peaks > $m6A_sig_peaks_summit_location
+awk '{if($1~/[^#]/) {summit=$2-1+$5; print $1 "\t" summit-151 "\t" summit+150} }' $m6A_neg_peaks > $m6A_neg_peaks_summit_location
+
+sed -i "1d" $m6A_neg_peaks_summit_location
+
+#Intersect with annotated genes in order to fetch the sequences from the sense strand
+m6A_sig_peaks_summit_bed="/public/home/xijf/project/MeRIP_seq/summitToMotif/results/m6A_sig_peaks_summit.bed"
+m6A_neg_peaks_summit_bed="/public/home/xijf/project/MeRIP_seq/summitToMotif/results/m6A_neg_peaks_summit.bed"
+gtf="/public/home/xijf/project/reference/hg/hg19/hg19.gtf"
+
+intersectBed -wo -a $m6A_sig_peaks_summit_location -b $gtf | awk -v OFS="\t" '{print $1,$2,$3,"*","*",$10}' | uniq >$m6A_sig_peaks_summit_bed
+intersectBed -wo -a $m6A_neg_peaks_summit_location -b $gtf | awk -v OFS="\t" '{print $1,$2,$3,"*","*",$10}' | uniq >$m6A_neg_peaks_summit_bed
+
+#Fetch sequences from the .fasta file containing the sequence of the human genome
+# m6A_sig_peaks_summit_fa="/public/home/xijf/project/MeRIP_seq/summitToMotif/results/m6A_sig_peaks_summit.fa"
+# m6a_neg_peaks_summit_fa="/public/home/xijf/project/MeRIP_seq/summitToMotif/results/m6A_neg_peaks_summit.fa"
+# ref="/public/home/xijf/project/reference/hg/hg19/hg19.fa"
+
+# fastaFromBed -s -fi $ref -bed $m6a_sig_peaks_summit_bed -fo m6A_sig_peaks_summit.fa
+# fastaFromBed -s -fi $ref -bed $m6a_neg_peaks_summit_bed -fo m6A_neg_peaks_summit.fa
+
+#Run CentriMo
+# meme_txt="/public/home/xijf/project/MeRIP_seq/motif_search/results/bestpeaks_meme/meme.txt"
+# outputdir1="/public/home/xijf/project/MeRIP_seq/summitToMotif/results/sig_peaks_motif_centrimo"
+# outputdir2="/public/home/xijf/project/MeRIP_seq/summitToMotif/results/neg_peaks_motif_centrimo"
+
+# centrimo  --o $outputdir1 --norc $m6A_sig_peaks_summit_fa $meme_txt
+# centrimo  --o $outputdir2 --norc $m6A_neg_peaks_summit_fa $meme_txt
+

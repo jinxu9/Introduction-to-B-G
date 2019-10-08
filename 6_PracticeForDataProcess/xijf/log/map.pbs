@@ -1,0 +1,25 @@
+## PBS configure 
+#PBS -N mapping
+#PBS -j oe
+#PBS -q batch
+#PBS -S /bin/sh
+#PBS -l nodes=1:ppn=8
+#PBS -l mem=30000m
+
+# This is necessary to find  the module commands
+ source /etc/profile.d/modules.sh
+ source /public/home/xijf/.bashrc
+# load tools by module 
+# module load bedtools
+ module load bowtie1/1.2.3
+
+# Denfine the path of file
+index='/public/home/xijf/project/reference/hg/hg19/hg19_index/hg19'
+IP='/public/home/xijf/project/MeRIP_seq/mapping/data/IP.fastq'
+Input='/public/home/xijf/project/MeRIP_seq/mapping/data/Input.fastq'
+IP_results='/public/home/xijf/project/MeRIP_seq/mapping/results/IP.sam'
+Input_results='/public/home/xijf/project/MeRIP_seq/mapping/results/Input.sam'
+
+# Map reads to a reference genome, using Bowtie.
+bowtie -m 5 -a --sam --best --chunkmbs 200 --strata $index $IP > $IP_results
+bowtie -m 5 -a --sam --best --chunkmbs 200 --strata $index $Input > $Input_results

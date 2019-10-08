@@ -1,0 +1,20 @@
+## PBS configure 
+#PBS -N call_peak
+#PBS -j oe
+#PBS -q batch
+#PBS -S /bin/sh
+#PBS -l nodes=1:ppn=8
+#PBS -l mem=10000m
+
+# This is necessary to find  the module commands
+ source /etc/profile.d/modules.sh
+ source /public/home/xijf/.bashrc
+# load tools by module 
+module load MACS/1.2.3
+
+macs14 -t /public/home/xijf/project/MeRIP_seq/mapping/results/IP.sam -c /public/home/xijf/project/MeRIP_seq/mapping/results/Input.sam --name=m6A --format="SAM" --gsize=282000000 --tsize=36 --nomodel --shiftsize=50 -w -S 2>/public/home/xijf/project/MeRIP_seq/peak_calling/results/macs.out --o /public/home/xijf/project/MeRIP_seq/peak_calling/results
+
+# '--tsize=36' is set by length of sequenced reads
+# '--shiftsize=50' is set by the size of input RNA fragments (100nt)
+# '2>/public/home/xijf/project/MeRIP_seq/peak_calling/results/macs.out' causes the standard erro output stream ('stderr') of MACS to be written to a file named 'macs.out' in the dir=2>/public/home/xijf/project/MeRIP_seq/peak_calling/results
+# '-w -S' parameters are used for storing the fragment pileup in wiggle format, which can be downloaded into a genome browser for visualization.
